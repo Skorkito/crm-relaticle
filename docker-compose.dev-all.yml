@@ -7,7 +7,7 @@ services:
     volumes:
       - ./src:/var/www
     networks:
-      - net_sorix_crm
+      - net_eduranga
     depends_on:
       - mysql
       - redis
@@ -29,12 +29,12 @@ services:
     environment:
       SERVER_NAME: ${SERVER_NAME:-localhost}
     ports:
-      - "8089:80"
+      - "8084:80"
     volumes:
       - ./src:/var/www
       - ./docker/nginx/default.conf.template:/etc/nginx/templates/default.conf.template
     networks:
-      - net_sorix_crm
+      - net_eduranga
     depends_on:
       - app
 
@@ -45,11 +45,11 @@ services:
       -  .env.docker
     command: --sort_buffer_size=64M
     ports:
-      - "3309:3306"
+      - "3308:3306"
     volumes:
       - dbdata_dev:/var/lib/mysql
     networks:
-      - net_sorix_crm
+      - net_eduranga
 
   phpmyadmin:
     image: phpmyadmin:latest
@@ -57,19 +57,19 @@ services:
     env_file:
       -  .env.docker
     ports:
-        - 8091:80
+        - 8089:80
     networks:
-        - net_sorix_crm
+        - net_eduranga
 
   redis:
     image: redis:alpine
     container_name: sorix_crm_dev_redis
     ports:
-      - "6381:6379"
+      - "6379:6379"
     volumes:
       - redisdata_dev:/data
     networks:
-      - net_sorix_crm
+      - net_eduranga
 
   meilisearch:
     image: getmeili/meilisearch:v1.14.0
@@ -78,15 +78,15 @@ services:
     environment:
       MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-masterKey}
     ports:
-      - "7701:7700"
+      - "7700:7700"
     volumes:
       - meilisearch_data:/meili_data
     networks:
-      - net_sorix_crm
+      - net_eduranga
 
 networks:
-  net_sorix_crm:
-    name: net_sorix_crm
+  net_eduranga:
+    name: net_eduranga
     driver: bridge
     ipam:
       driver: default

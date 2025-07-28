@@ -22,6 +22,10 @@ use Laravel\Jetstream\Http\Controllers\TeamInvitationController;
 |
 */
 
+Route::get('/', function () {
+    return redirect()->away(url()->getAppUrl());
+});
+
 Route::middleware('guest')->group(function () {
     Route::get('/auth/redirect/{provider}', RedirectController::class)
         ->name('auth.socialite.redirect')
@@ -43,10 +47,10 @@ Route::middleware('guest')->group(function () {
     })->name('password.request');
 });
 
-Route::get('/', HomeController::class);
+// Route::get('/', HomeController::class);
 
-Route::get('/terms-of-service', TermsOfServiceController::class)->name('terms.show');
-Route::get('/privacy-policy', PrivacyPolicyController::class)->name('policy.show');
+// Route::get('/terms-of-service', TermsOfServiceController::class)->name('terms.show');
+// Route::get('/privacy-policy', PrivacyPolicyController::class)->name('policy.show');
 
 Route::redirect('/dashboard', url()->getAppUrl())->name('dashboard');
 
@@ -55,6 +59,6 @@ Route::get('/team-invitations/{invitation}', [TeamInvitationController::class, '
     ->name('team-invitations.accept');
 
 // Community redirects
-Route::get('/discord', function () {
-    return redirect()->away(config('services.discord.invite_url'));
-})->name('discord');
+// Route::get('/discord', function () {
+//     return redirect()->away(config('services.discord.invite_url'));
+// })->name('discord');

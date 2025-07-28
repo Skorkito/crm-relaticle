@@ -64,19 +64,20 @@ final class AppPanelProvider extends PanelProvider
         $panel
             ->default()
             ->id('app')
-            ->domain('app.'.parse_url((string) config('app.url'))['host'])
+            ->path('app')
+            // ->domain('app.'.parse_url((string) config('app.url'))['host'])
             ->homeUrl(fn (): string => CompanyResource::getUrl())
-            ->brandName('Relaticle')
+            ->brandName('SORIX CRM')
             ->login(Login::class)
             ->registration(Register::class)
             ->passwordReset()
             ->emailVerification()
             ->databaseNotifications()
             ->brandLogoHeight('2.6rem')
-            ->brandLogo(fn () => view('filament.app.logo'))
+            // ->brandLogo(fn () => view('filament.app.logo'))
             ->viteTheme('resources/css/app.css')
             ->colors([
-                'primary' => '#5D54E8',
+                'primary' => '#2072FB',
             ])
             ->viteTheme('resources/css/filament/app/theme.css')
             ->font('Satoshi')
