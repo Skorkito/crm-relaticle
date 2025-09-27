@@ -83,7 +83,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="mailto:manuk.minasyan1@gmail.com"
+                        <a href="mailto:tomasz@sorix.tech"
                            class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary-400 text-sm transition-colors">
                             Contact Us
                         </a>

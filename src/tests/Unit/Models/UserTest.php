@@ -32,7 +32,7 @@ test('user belongs to many tasks', function () {
 
 test('user can access admin panel', function () {
     $adminUser = User::factory()->create([
-        'email' => 'manuk.minasyan1@gmail.com',
+        'email' => 'tomasz@sorix.tech',
         'email_verified_at' => now(),
     ]);
 

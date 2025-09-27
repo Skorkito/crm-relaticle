@@ -106,6 +106,6 @@ final class UserResource extends Resource
     #[\Override]
     public static function canAccess(): bool
     {
-        return auth()->user()->email === 'manuk.minasyan1@gmail.com';
+        return auth()->user()->email === 'tomasz@sorix.tech';
     }
 }

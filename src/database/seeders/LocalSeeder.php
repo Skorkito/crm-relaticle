@@ -21,8 +21,8 @@ final class LocalSeeder extends Seeder
         $user = User::factory()
             ->withPersonalTeam()
             ->create([
-                'name' => 'Manuk Minasyan',
-                'email' => 'manuk.minasyan1@gmail.com',
+                'name' => 'Tomasz Sasinowski',
+                'email' => 'tomasz@sorix.tech',
             ]);
 
         User::factory()
