@@ -35,7 +35,8 @@ final class AdminPanelProvider extends PanelProvider
 
         return $panel
             ->id('admin')
-            ->domain('admin.'.$host)
+            ->path('admin')
+            // ->domain('admin.'.$host)
             ->login()
             ->spa()
             ->colors([
