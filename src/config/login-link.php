@@ -20,6 +20,7 @@ return [
         '127.0.0.1',
         'relaticle-app.test',
         'app.relaticle-app.test',
+        'crm.sorix.tech',
     ],
 
     /*
