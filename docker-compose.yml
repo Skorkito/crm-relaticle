@@ -13,10 +13,6 @@ services:
       - redis
     env_file:
       -  .env.docker
-    environment:
-      APP_NAME: "new-UCZE"
-      APP_ENV: local
-      HORIZON_ENV: local
       
     extra_hosts:
       - "dam.wsip.pl:172.17.0.62"
@@ -27,7 +23,7 @@ services:
     image: nginx:alpine
     container_name: sorix_crm_dev_nginx
     environment:
-      SERVER_NAME: ${SERVER_NAME:-localhost}
+      SERVER_NAME: ${SERVER_NAME:-crm.sorix.tech}
     ports:
       - "8089:80"
     volumes:
@@ -44,8 +40,6 @@ services:
     env_file:
       -  .env.docker
     command: --sort_buffer_size=64M
-    ports:
-      - "3309:3306"
     volumes:
       - dbdata_dev:/var/lib/mysql
     networks:
@@ -64,8 +58,6 @@ services:
   redis:
     image: redis:alpine
     container_name: sorix_crm_dev_redis
-    ports:
-      - "6381:6379"
     volumes:
       - redisdata_dev:/data
     networks:
@@ -77,8 +69,6 @@ services:
     restart: unless-stopped
     environment:
       MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-masterKey}
-    ports:
-      - "7701:7700"
     volumes:
       - meilisearch_data:/meili_data
     networks:
