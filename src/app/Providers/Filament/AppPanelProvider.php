@@ -74,7 +74,7 @@ final class AppPanelProvider extends PanelProvider
             ->emailVerification()
             ->databaseNotifications()
             ->brandLogoHeight('2.6rem')
-            ->brandLogo(fn () => public_path('images/sorix_logo.svg'))
+            ->brandLogo(asset('images/sorix_logo.svg'))
             ->viteTheme('resources/css/app.css')
             ->colors([
                 'primary' => '#2072FB',
