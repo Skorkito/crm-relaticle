@@ -42,7 +42,7 @@ final class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Indigo,
             ])
-            ->brandName('Relaticle Admin')
+            ->brandName('ADMIN PANEL')
             ->discoverResources(in: base_path('app-modules/Admin/src/Filament/Resources'), for: 'Relaticle\\Admin\\Filament\\Resources')
             ->discoverPages(in: base_path('app-modules/Admin/src/Filament/Pages'), for: 'Relaticle\\Admin\\Filament\\Pages')
             ->navigationGroups([
