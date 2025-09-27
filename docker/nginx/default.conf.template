@@ -16,7 +16,7 @@ server {
         expires 14d;
     }
 
-    location = /favicon.ico {
+    location = /favicon.png {
         log_not_found off;
         access_log off;
     }

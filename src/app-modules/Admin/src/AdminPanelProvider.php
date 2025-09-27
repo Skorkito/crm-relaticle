@@ -43,6 +43,7 @@ final class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Indigo,
             ])
             ->brandName('ADMIN PANEL')
+            ->brandLogo(fn () => public_path('images/sorix_logo.svg'))
             ->discoverResources(in: base_path('app-modules/Admin/src/Filament/Resources'), for: 'Relaticle\\Admin\\Filament\\Resources')
             ->discoverPages(in: base_path('app-modules/Admin/src/Filament/Pages'), for: 'Relaticle\\Admin\\Filament\\Pages')
             ->navigationGroups([
