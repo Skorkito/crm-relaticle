@@ -25,7 +25,7 @@ services:
     environment:
       SERVER_NAME: ${SERVER_NAME:-crm.sorix.tech}
     ports:
-      - "8089:80"
+      - "80:80"
     volumes:
       - ./src:/var/www
       - ./docker/nginx/default.conf.template:/etc/nginx/templates/default.conf.template
