@@ -39,21 +39,23 @@ services:
     container_name: sorix_crm_dev_mysql
     env_file:
       -  .env.docker
+    ports:
+      - 3307:3306
     command: --sort_buffer_size=64M
     volumes:
       - dbdata_dev:/var/lib/mysql
     networks:
       - net_sorix_crm
 
-  phpmyadmin:
-    image: phpmyadmin:latest
-    restart: always
-    env_file:
-      -  .env.docker
-    ports:
-        - 8091:80
-    networks:
-        - net_sorix_crm
+  # phpmyadmin:
+  #   image: phpmyadmin:latest
+  #   restart: always
+  #   env_file:
+  #     -  .env.docker
+  #   ports:
+  #       - 8091:80
+  #   networks:
+  #       - net_sorix_crm
 
   redis:
     image: redis:alpine
